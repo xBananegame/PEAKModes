@@ -1,0 +1,58 @@
+name: "💡 Feature / Idea"
+description: Suggest a new feature, setting or balance change for one of the mods.
+title: "[Idea] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Got an idea? Nice. Keep it as concrete as you can — "what should happen in game" beats "make it better".
+
+  - type: dropdown
+    id: mod
+    attributes:
+      label: Which mod?
+      options:
+        - EnemyControl
+        - PeakImposter
+        - Scoreboard
+        - A new mod / general idea
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: What should the mod do?
+      placeholder: "It would be cool if ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would this make the mod better?
+      description: What problem does it solve, or what makes it more fun?
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: How should it work in detail?
+      description: |
+        Optional, but very welcome. Think about: which key/button, what do other players see,
+        does it need a config option, how does it behave for the host vs. clients?
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: How big is this, roughly?
+      options:
+        - Small tweak (number, key, text)
+        - New option in the config
+        - New mechanic / bigger feature
+        - No idea
+    validations:
+      required: false
