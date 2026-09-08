@@ -1,0 +1,117 @@
+name: "🐞 Bug Report"
+description: Something in one of the mods is broken, crashes or behaves wrong.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug!
+        Please fill in as much as you can — especially the **log file**, it makes fixing this a lot faster.
+
+  - type: dropdown
+    id: mod
+    attributes:
+      label: Which mod?
+      description: Pick the mod the bug happens in.
+      options:
+        - EnemyControl
+        - PeakImposter
+        - Scoreboard
+        - More than one / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: mod-version
+    attributes:
+      label: Mod version
+      description: Shown in Thunderstore / Gale, e.g. `1.14.0`.
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: Were you the host or a client?
+      options:
+        - Host
+        - Client (joined someone else's lobby)
+        - Singleplayer / solo run
+        - Both sides are affected
+    validations:
+      required: true
+
+  - type: dropdown
+    id: everyone-has-mod
+    attributes:
+      label: Did everyone in the lobby have the mod installed?
+      options:
+        - "Yes, everyone had it"
+        - "No, only some players"
+        - "I don't know"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the bug and what you expected instead.
+      placeholder: |
+        What I did:
+        What happened:
+        What I expected:
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can I trigger this myself?
+      placeholder: |
+        1. Start a lobby with 3 players
+        2. Press ...
+        3. ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does it happen?
+      options:
+        - Every time
+        - Often, but not always
+        - Happened once
+        - Random / no pattern
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log file
+      description: |
+        Please attach your `LogOutput.log`.
+        **Gale:** profile folder → `BepInEx/LogOutput.log`
+        **Manual:** `PEAK/BepInEx/LogOutput.log`
+        Drag the file into this box, or paste the relevant part.
+      render: text
+
+  - type: textarea
+    id: other-mods
+    attributes:
+      label: Other mods installed
+      description: List the other mods in your profile (or paste your Gale/Thunderstore mod list).
+      placeholder: |
+        BepInExPack_PEAK 5.4.2403
+        ...
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots / video / anything else
+      description: Optional, but a clip usually says more than a paragraph.
