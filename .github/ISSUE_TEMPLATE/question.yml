@@ -1,0 +1,44 @@
+name: "❓ Question / Help with installing"
+description: Something is unclear, or the mod won't start.
+title: "[Question] "
+labels: ["question"]
+body:
+  - type: dropdown
+    id: mod
+    attributes:
+      label: Which mod?
+      options:
+        - EnemyControl
+        - PeakImposter
+        - Scoreboard
+        - General / all of them
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install
+    attributes:
+      label: How did you install it?
+      options:
+        - Gale
+        - r2modman
+        - Thunderstore App
+        - Manually (dropped the DLL into BepInEx/plugins)
+        - Not installed yet
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: Describe what you tried and where you got stuck.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log file (if the mod doesn't load)
+      description: "`BepInEx/LogOutput.log` from your profile folder — drag it in here."
+      render: text
