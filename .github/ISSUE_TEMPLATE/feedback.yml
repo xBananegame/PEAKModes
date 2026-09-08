@@ -1,0 +1,83 @@
+name: "💬 Feedback / Experience Report"
+description: Tell me how a mod plays — what works, what feels off, balance, fun factor.
+title: "[Feedback] "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is the place for "we played it and here's how it went".
+        No bug needed — impressions, balance and fun factor are exactly what I'm looking for.
+
+  - type: dropdown
+    id: mod
+    attributes:
+      label: Which mod?
+      options:
+        - EnemyControl
+        - PeakImposter
+        - Scoreboard
+        - Several mods together
+    validations:
+      required: true
+
+  - type: input
+    id: mod-version
+    attributes:
+      label: Mod version
+      placeholder: "1.0.0"
+
+  - type: dropdown
+    id: group-size
+    attributes:
+      label: How many players were in the lobby?
+      options:
+        - "1 (solo)"
+        - "2"
+        - "3"
+        - "4"
+        - "More than 4"
+    validations:
+      required: true
+
+  - type: textarea
+    id: liked
+    attributes:
+      label: What did you like?
+      placeholder: "The moment when ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: disliked
+    attributes:
+      label: What felt off, annoying or unfair?
+      placeholder: "..."
+
+  - type: dropdown
+    id: balance
+    attributes:
+      label: How was the balance?
+      options:
+        - Way too easy
+        - A bit too easy
+        - Just right
+        - A bit too hard
+        - Way too hard
+        - Not applicable
+    validations:
+      required: true
+
+  - type: textarea
+    id: balance-details
+    attributes:
+      label: Anything specific about the balance?
+      description: |
+        E.g. cooldowns, timers, how strong a role or a creature feels,
+        how readable the scoreboard is during a run.
+
+  - type: textarea
+    id: anything-else
+    attributes:
+      label: Anything else?
+      description: Clips, screenshots and funny stories very welcome.
